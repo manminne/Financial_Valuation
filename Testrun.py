@@ -11,6 +11,8 @@ import math
 
 import finnhub
 
+lukas="cool"
+
 # Setup client
 tickerlist = si.tickers_nasdaq()
 jona = "sandbox_buql2av48v6s4fu1gq10"
