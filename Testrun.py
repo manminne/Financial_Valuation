@@ -160,7 +160,15 @@ def market_screen(ticker_list):
     return df
 
 
-past_ticker_table = market_screen_past(tickerlist_short)
+#past_ticker_table = market_screen_past(tickerlist_short)
 
-past_ticker_table.to_csv("short_ticker_table.csv")
+#past_ticker_table.to_csv("short_ticker_table.csv")
 
+x="AACQ"
+
+mytime = pd.Timestamp(fclient.recommendation_trends(x)[22]["period"])+pd.Timedelta(days=1)
+print(Decimal(si.get_data(x).where(si.get_data(x).index.to_series()== mytime).dropna()["close"]))
+
+print(recommendations_past(x))
+print(si.get_live_price(x))
+print(mytime)
